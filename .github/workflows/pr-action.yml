@@ -1,0 +1,23 @@
+name: PR Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  self-hosted-job:
+    name: Self hosted
+    runs-on: Arise
+
+    steps:
+      - name: Hello from Self Hosted
+        run: echo "Hello Vai! Running on Self Hosted Runner"
+
+  ubuntu-job:
+    name: Ubuntu Latest Runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hello from Ubuntu
+        run: echo "Hello Vai! Running on Ubuntu Latest"
