@@ -1,0 +1,21 @@
+name: A sample action file
+
+# run on which action
+on:
+  push:
+    branches: ["main"]          # FIXED: was indented 6 spaces; use 2 per level (4 under "on") to match the rest of the file
+
+jobs:
+  job1:
+    name: First job
+    runs-on: Arise 
+    steps:
+      - name: Print message from self-hosted runner
+        run: echo "Hello, I am from GitHub Actions running on a self-hosted runner"
+
+  job2:
+    name: Second job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message from GitHub-hosted runner
+        run: echo "Hello, I am from GitHub Actions running on a GitHub-hosted runner"
