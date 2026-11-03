@@ -1,0 +1,13 @@
+# Docker file for devlopment enviroment 
+
+# Base Image
+FROM node:20-alpine
+# work dir
+WORKDIR /app
+ENV NODE_ENV=devlopment
+COPY package*.json ./
+RUN npm ci
+COPY . .
+USER node
+EXPOSE 3000
+CMD ["node","index.js"]
